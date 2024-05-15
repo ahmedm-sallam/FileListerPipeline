@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository
-                git 'https://github.com/<your-username>/ListFilesPipeline.git'
+                git 'https://github.com/ahmedm-sallam/FileListerPipeline.git'
             }
         }
         stage('Execute Script') {
