@@ -1,16 +1,18 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ahmedm-sallam/FileListerPipeline.git'
+                // Checkout the repository
+                git 'https://github.com/<your-username>/ListFilesPipeline.git'
             }
         }
         stage('Execute Script') {
             steps {
-
-                bat 'list_files.sh'
+                // Execute the bash script
+                sh 'chmod +x list_files.sh'
+                sh './list_files.sh'
             }
         }
     }
