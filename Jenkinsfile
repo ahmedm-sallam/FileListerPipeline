@@ -1,10 +1,10 @@
 pipeline {
-  agent any
-  stages {
-    stage('hello') {
-      steps {
-        bat 'CloudTask.bat'
-      }
+    agent any
+    stages {
+        stage('Execute Script') {
+            steps {
+                bat 'list_files.bat'
+            }
+        }
     }
-  }
 }
