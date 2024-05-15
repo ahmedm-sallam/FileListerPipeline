@@ -9,8 +9,9 @@ pipeline {
         }
         stage('Execute Script') {
             steps {
-
-                sh 'list_files.sh'
+                // Ensure the script is executable and run it
+                sh 'chmod +x list_files.sh'
+                sh './list_files.sh'
             }
         }
     }
