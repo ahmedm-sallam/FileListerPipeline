@@ -14,6 +14,12 @@ pipeline {
                 sh './list_files.sh'
             }
         }
+        stage('Clean Workspace') {
+            steps {
+                // Clean the workspace before checking out the second repo
+                cleanWs()
+            }
+        }
         stage('Checkout Second Repo') {
             steps {
                 git branch: 'main', url: 'https://github.com/ahmedm-sallam/repo2.git'
